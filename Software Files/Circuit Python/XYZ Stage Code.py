@@ -97,6 +97,7 @@ Motor_Speed = 1.0
 Motor_Retract_Speed = 1.0
 Motor_Retract_Timing = 3.75
 
+LightSwitch = False
 ZSwitch = False
 
 ZPosFlag = False
@@ -117,9 +118,9 @@ XNegMoveFlag = False
 VOLTAGE_GAIN = 13.9 / 3.9
 CURRENT_GAIN = 1 / 0.47
 CURRENT_OFFSET = -0.005
-CURRENT_THRESHOLD_X = 0.2
-CURRENT_THRESHOLD_Y = 0.2
-CURRENT_THRESHOLD_Z = 0.2
+CURRENT_THRESHOLD_X = 0.1225
+CURRENT_THRESHOLD_Y = 0.1375
+CURRENT_THRESHOLD_Z = 0.1275
 
 current_list = [0, 0, 0, 0]
 function_current_list = [0, 0, 0, 0]
@@ -215,27 +216,35 @@ while True:
 
     if not buttons & (1 << BUTTON_Y):
         Motor_Speed = 1.0
-        CURRENT_THRESHOLD_X = 0.1125
-        CURRENT_THRESHOLD_Y = 0.1675
-        CURRENT_THRESHOLD_Z = 0.1425
+        CURRENT_THRESHOLD_X = 0.1225
+        CURRENT_THRESHOLD_Y = 0.1375
+        CURRENT_THRESHOLD_Z = 0.1275
 
     if not buttons & (1 << BUTTON_X):
-        Motor_Speed = 0.675
-        CURRENT_THRESHOLD_X = 0.1925
-        CURRENT_THRESHOLD_Y = 0.1875
-        CURRENT_THRESHOLD_Z = 0.1875
+        Motor_Speed = 0.625
+        CURRENT_THRESHOLD_X = 0.1625
+        CURRENT_THRESHOLD_Y = 0.17875
+        CURRENT_THRESHOLD_Z = 0.1625
 
     if not buttons & (1 << BUTTON_A):
-        Motor_Speed = 0.425
-        CURRENT_THRESHOLD_X = 0.25
-        CURRENT_THRESHOLD_Y = 0.25
-        CURRENT_THRESHOLD_Z = 0.25
-
-    if not buttons & (1 << BUTTON_B):
         Motor_Speed = 0.275
-        CURRENT_THRESHOLD_X = 0.2875
-        CURRENT_THRESHOLD_Y = 0.2875
-        CURRENT_THRESHOLD_Z = 0.2875
+        CURRENT_THRESHOLD_X = 0.2325
+        CURRENT_THRESHOLD_Y = 0.2325
+        CURRENT_THRESHOLD_Z = 0.27
+
+    if (LightSwitch is False):
+        if not buttons & (1 << BUTTON_B):
+            while not buttons & (1 << BUTTON_B):
+                LightSwitch = True
+                mot_a.throttle = 1.0
+                buttons = seesaw.digital_read_bulk(button_mask)
+
+    if (LightSwitch is True):
+        if not buttons & (1 << BUTTON_B):
+            while not buttons & (1 << BUTTON_B):
+                LightSwitch = False
+                mot_a.throttle = 0.0
+                buttons = seesaw.digital_read_bulk(button_mask)
 
     if (ZSwitch is False):
         if not buttons & (1 << BUTTON_START):
