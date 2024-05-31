@@ -2,7 +2,7 @@
 
 mtllib Cube 1x1 V5_Cube 1x1 V5 Bot Press.mtl
 
-g Solid1:10
+g Solid1:9
 
 v -24.900000 0.000000 -22.900000
 v -24.900000 0.000000 22.900000
@@ -4550,4 +4550,4 @@ f 113/1341/1341 117/1328/1328 109/1329/1329
 # 1358 normals
 # 1216 facets
 
-# 11 groups
+# 10 groups

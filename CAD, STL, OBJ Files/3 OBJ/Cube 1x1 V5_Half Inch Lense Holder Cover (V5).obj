@@ -2,7 +2,7 @@
 
 mtllib Cube 1x1 V5_Half Inch Lense Holder Cover (V5).mtl
 
-g Solid1:13
+g Solid1:12
 
 v -7.322233 26.667767 -5.625000
 v -7.322233 26.667767 -4.375000
@@ -2270,4 +2270,4 @@ f 290/626/626 267/598/598 270/550/550
 # 650 normals
 # 640 facets
 
-# 14 groups
+# 13 groups

@@ -2,7 +2,7 @@
 
 mtllib Cube 1x1 V5_Filter Mount (SM1).mtl
 
-g Solid1:24
+g Solid1:21
 
 v -20.799999 13.950000 -2.500000
 v -20.799999 13.950000 2.500000
@@ -1520,4 +1520,4 @@ f 166/441/441 174/442/442 190/341/341
 # 442 normals
 # 420 facets
 
-# 25 groups
+# 22 groups

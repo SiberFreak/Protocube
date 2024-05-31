@@ -2,7 +2,7 @@
 
 mtllib Cube 1x1 V5_One Inch Lense Holder (V5).mtl
 
-g Solid1:16
+g Solid1:15
 
 v -21.967766 13.646699 -4.375000
 v -21.967766 13.646699 4.375000
@@ -4837,4 +4837,4 @@ f 634/1398/1398 626/1419/1419 636/1397/1397
 # 1421 normals
 # 1334 facets
 
-# 17 groups
+# 16 groups

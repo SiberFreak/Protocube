@@ -2,7 +2,7 @@
 
 mtllib Cube 1x1 V5_Laser Switch.mtl
 
-g Solid1:12
+g Solid1:11
 
 v -13.849651 -0.838332 0.000000
 v -13.849651 -0.838332 10.500000
@@ -2038,4 +2038,4 @@ f 117/548/548 153/546/546 115/547/547
 # 596 normals
 # 556 facets
 
-# 13 groups
+# 12 groups

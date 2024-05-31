@@ -2,7 +2,7 @@
 
 mtllib Cube 1x1 V5_Baseplate V5 Press.mtl
 
-g Solid1:9
+g Solid1:8
 
 v -0.000603 117.126360 -25.000000
 v -0.193605 120.405283 -25.000000
@@ -7639,4 +7639,4 @@ f 25/1760/1760 19/1778/1778 9/1779/1779
 # 1851 normals
 # 2582 facets
 
-# 10 groups
+# 9 groups

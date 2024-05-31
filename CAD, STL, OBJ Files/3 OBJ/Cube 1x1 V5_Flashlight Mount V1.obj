@@ -2,7 +2,7 @@
 
 mtllib Cube 1x1 V5_Flashlight Mount V1.mtl
 
-g Solid1:39
+g Solid1:35
 
 v -24.875001 49.800000 -22.900000
 v -24.875001 49.800000 22.900000
@@ -3630,4 +3630,4 @@ f 74/1021/1021 108/996/996 104/955/955
 # 1042 normals
 # 1032 facets
 
-# 40 groups
+# 36 groups

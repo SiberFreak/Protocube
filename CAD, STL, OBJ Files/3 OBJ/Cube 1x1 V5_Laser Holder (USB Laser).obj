@@ -2,7 +2,7 @@
 
 mtllib Cube 1x1 V5_Laser Holder (USB Laser).mtl
 
-g Solid1:20
+g Solid1:16
 
 v -21.967766 13.646699 -4.375000
 v -21.967766 13.646699 4.375000
@@ -4175,4 +4175,4 @@ f 346/1207/1207 373/1208/1208 366/1084/1084
 # 1231 normals
 # 1146 facets
 
-# 21 groups
+# 17 groups

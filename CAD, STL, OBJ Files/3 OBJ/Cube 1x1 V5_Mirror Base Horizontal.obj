@@ -2,7 +2,7 @@
 
 mtllib Cube 1x1 V5_Mirror Base Horizontal.mtl
 
-g Solid1:29
+g Solid1:26
 
 v 24.825001 7.700000 10.682864
 v 24.825001 41.700001 10.682864
@@ -1343,4 +1343,4 @@ f 2/367/367 26/397/397 30/398/398
 # 400 normals
 # 358 facets
 
-# 30 groups
+# 27 groups

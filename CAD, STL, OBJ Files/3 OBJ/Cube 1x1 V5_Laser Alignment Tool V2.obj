@@ -2,7 +2,7 @@
 
 mtllib Cube 1x1 V5_Laser Alignment Tool V2.mtl
 
-g Solid1:8
+g Solid1:7
 
 v -22.374554 14.644213 -1.250000
 v -22.374554 14.644213 1.250000
@@ -4787,4 +4787,4 @@ f 301/1310/1310 227/1289/1289 299/1309/1309
 # 1372 normals
 # 1366 facets
 
-# 9 groups
+# 8 groups

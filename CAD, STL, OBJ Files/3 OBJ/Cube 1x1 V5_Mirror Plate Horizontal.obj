@@ -2,7 +2,7 @@
 
 mtllib Cube 1x1 V5_Mirror Plate Horizontal.mtl
 
-g Solid1:30
+g Solid1:27
 
 v 18.991369 10.950000 15.455835
 v 18.991369 40.949998 15.455835
@@ -972,4 +972,4 @@ f 51/272/272 50/244/244 58/245/245
 # 282 normals
 # 264 facets
 
-# 31 groups
+# 28 groups

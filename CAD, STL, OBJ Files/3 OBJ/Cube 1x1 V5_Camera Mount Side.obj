@@ -2,7 +2,7 @@
 
 mtllib Cube 1x1 V5_Camera Mount Side.mtl
 
-g Solid1:33
+g Solid1:29
 
 v 24.825001 7.700000 -16.975000
 v 24.825001 41.700001 -16.975000
@@ -1884,4 +1884,4 @@ f 229/565/565 228/563/563 227/564/564
 # 565 normals
 # 496 facets
 
-# 34 groups
+# 30 groups

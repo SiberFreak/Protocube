@@ -2,7 +2,7 @@
 
 mtllib Cube 1x1 V5_Tunnel Horizontal.mtl
 
-g Solid1:26
+g Solid1:23
 
 v 24.825001 7.700000 -16.975000
 v 24.825001 41.700001 -16.975000
@@ -586,4 +586,4 @@ f 62/189/189 64/190/190 56/191/191
 # 192 normals
 # 128 facets
 
-# 27 groups
+# 24 groups

@@ -2,7 +2,7 @@
 
 mtllib Cube 1x1 V5_Dichroic Mirror Mount.mtl
 
-g Solid1:32
+g Solid1:28
 
 v 24.825001 7.700000 -16.975000
 v 24.825001 41.849999 -16.975000
@@ -2223,4 +2223,4 @@ f 14/659/659 6/661/661 5/662/662
 # 662 normals
 # 594 facets
 
-# 33 groups
+# 29 groups

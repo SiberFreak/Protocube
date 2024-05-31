@@ -2,7 +2,7 @@
 
 mtllib Cube 1x1 V5_Filter Adapter (SM1).mtl
 
-g Solid1:35
+g Solid1:31
 
 v -14.343750 0.000000 -11.250000
 v -14.343750 0.000000 -5.500000
@@ -4753,4 +4753,4 @@ f 286/1353/1353 290/1294/1294 328/1295/1295
 # 1365 normals
 # 1342 facets
 
-# 36 groups
+# 32 groups

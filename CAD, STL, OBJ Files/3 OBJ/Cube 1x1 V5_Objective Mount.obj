@@ -2,7 +2,7 @@
 
 mtllib Cube 1x1 V5_Objective Mount.mtl
 
-g Solid1:34
+g Solid1:30
 
 v 24.825001 7.700000 -16.975000
 v 24.825001 10.200000 -16.975000
@@ -1758,4 +1758,4 @@ f 11/517/517 6/515/515 5/516/516
 # 517 normals
 # 476 facets
 
-# 35 groups
+# 31 groups
