@@ -236,7 +236,7 @@ while True:
         if not buttons & (1 << BUTTON_B):
             while not buttons & (1 << BUTTON_B):
                 LightSwitch = True
-                mot_a.throttle = 1.0
+                mot_a.throttle = 0.25
                 buttons = seesaw.digital_read_bulk(button_mask)
 
     if (LightSwitch is True):
