@@ -1,4 +1,3 @@
-# Protocube
-![Render 1](https://github.com/Siber18/Protocube/assets/31034109/f9d2c5ca-1b69-4068-a4ae-8bd0dc28a903)
-![Render 2](https://github.com/Siber18/Protocube/assets/31034109/0a817039-6d4d-4c26-a429-60e81192cea1)
-A microscope built using 3D printed Cubes!
+# Camera
+![Render (Camera)](https://github.com/Siber18/Protocube/assets/31034109/8560299f-2d21-4a9e-a2aa-e9ca995fda72)
+A Red cube designed to fit a standard size SM1 via a press fit and keep the light path enclosed.
