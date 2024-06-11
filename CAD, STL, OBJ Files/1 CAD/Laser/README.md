@@ -1,4 +1,3 @@
-# Protocube
-![Render 1](https://github.com/Siber18/Protocube/assets/31034109/f9d2c5ca-1b69-4068-a4ae-8bd0dc28a903)
-![Render 2](https://github.com/Siber18/Protocube/assets/31034109/0a817039-6d4d-4c26-a429-60e81192cea1)
-A microscope built using 3D printed Cubes!
+# Laser
+![Render (Light Source)](https://github.com/Siber18/Protocube/assets/31034109/75807551-4269-46ce-9414-0adb7cd26dcf)
+A White cube that holds the light source and is adjustable in the same way as the lenses, but with two mounts to align and tilt the light source. It also includes covers to be enclosed once aligned.
