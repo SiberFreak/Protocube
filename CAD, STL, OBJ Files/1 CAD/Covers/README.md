@@ -1,4 +1,4 @@
 # Protocube
-![Render 1](https://github.com/Siber18/Protocube/assets/31034109/f9d2c5ca-1b69-4068-a4ae-8bd0dc28a903)
-![Render 2](https://github.com/Siber18/Protocube/assets/31034109/0a817039-6d4d-4c26-a429-60e81192cea1)
+![Render Flourescent Upper](https://github.com/Siber18/Protocube/assets/31034109/757163c1-869e-436e-895b-ad3e277f2e05)
+![Render Transmitted Upper](https://github.com/Siber18/Protocube/assets/31034109/8b5c0aa7-5baf-484e-a068-338ef5781f4c)
 A microscope built using 3D printed Cubes!
