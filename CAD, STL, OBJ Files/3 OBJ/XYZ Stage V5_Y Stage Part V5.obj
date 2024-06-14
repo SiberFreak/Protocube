@@ -2,7 +2,7 @@
 
 mtllib XYZ Stage V5_Y Stage Part V5.mtl
 
-g Solid1:6
+g Solid1:7
 
 v -77.983368 29.363903 8.125000
 v -77.983368 12.586097 8.125000
@@ -4674,4 +4674,4 @@ f 178/1333/1333 202/1365/1365 210/1366/1366
 # 1378 normals
 # 1272 facets
 
-# 7 groups
+# 8 groups

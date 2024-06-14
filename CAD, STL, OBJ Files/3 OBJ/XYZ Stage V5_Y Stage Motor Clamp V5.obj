@@ -2,7 +2,7 @@
 
 mtllib XYZ Stage V5_Y Stage Motor Clamp V5.mtl
 
-g Solid1:7
+g Solid1:8
 
 v -31.424997 60.500001 10.828427
 v -31.424997 52.499999 10.828427
@@ -2152,4 +2152,4 @@ f 113/614/614 88/600/600 111/613/613
 # 624 normals
 # 596 facets
 
-# 8 groups
+# 9 groups

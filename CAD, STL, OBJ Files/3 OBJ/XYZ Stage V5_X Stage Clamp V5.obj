@@ -2,7 +2,7 @@
 
 mtllib XYZ Stage V5_X Stage Clamp V5.mtl
 
-g Solid1:10
+g Solid1:11
 
 v -147.504737 46.174561 22.978125
 v -147.504737 43.674561 22.978125
@@ -1368,4 +1368,4 @@ f 35/402/402 39/403/403 3/384/384
 # 404 normals
 # 368 facets
 
-# 11 groups
+# 12 groups
