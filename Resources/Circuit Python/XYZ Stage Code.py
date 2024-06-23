@@ -58,6 +58,7 @@ mot_a = motor.DCMotor(pwm_a_p, pwm_a_n)
 mot_b = motor.DCMotor(pwm_b_p, pwm_b_n)
 mot_c = motor.DCMotor(pwm_c_p, pwm_c_n)
 mot_d = motor.DCMotor(pwm_d_p, pwm_d_n)
+motors = [mot_a, mot_b, mot_c, mot_d]
 
 # Set the motor decay modes (if unset the default will be FAST_DECAY)
 mot_a.decay_mode = DECAY_MODE
@@ -65,15 +66,12 @@ mot_b.decay_mode = DECAY_MODE
 mot_c.decay_mode = DECAY_MODE
 mot_d.decay_mode = DECAY_MODE
 
-# Encoder constants
-GEAR_RATIO = 150                     # The gear ratio of the motor
-COUNTS_PER_REV = 12 * GEAR_RATIO    # The counts per revolution of the motor's output shaft
-
 # Create the encoder objects
 enc_a = rotaryio.IncrementalEncoder(board.ENCODER_A_B, board.ENCODER_A_A, divisor=1)
 enc_b = rotaryio.IncrementalEncoder(board.ENCODER_B_B, board.ENCODER_B_A, divisor=1)
 enc_c = rotaryio.IncrementalEncoder(board.ENCODER_C_B, board.ENCODER_C_A, divisor=1)
 enc_d = rotaryio.IncrementalEncoder(board.ENCODER_D_B, board.ENCODER_D_A, divisor=1)
+encoders = [enc_a, enc_b, enc_c, enc_d]
 
 BUTTON_X = const(6)
 BUTTON_Y = const(2)
@@ -133,6 +131,10 @@ CURRENT_THRESHOLD_X = 0.2325
 CURRENT_THRESHOLD_Y = 0.2325
 CURRENT_THRESHOLD_Z = 0.27
 
+Encoder_Threshold_X = 30000
+Encoder_Threshold_Y = 30000
+Encoder_Threshold_Z = 30000
+
 current_list = [0, 0, 0, 0]
 function_current_list = [0, 0, 0, 0]
 
@@ -143,30 +145,43 @@ def Read_Current():
         select(i + board.CURRENT_SENSE_A_ADDR)
         current = (get_voltage(analog_in) + CURRENT_OFFSET) * CURRENT_GAIN
         function_current_list.append(current)
+        print("C", i + 1, " = ", round(current, 4), sep="", end=", ")
+    print()
     return function_current_list
 
-def Motor_Retract(Motor, Speed):
-    print('Motor current limit reached')
-    Motor.throttle = Speed
-    time.sleep(Motor_Retract_Timing)
-    Motor.throttle = 0.0
+def Motor_Home():
+
+    homes = [1, 2, 3]
+    for i in homes:
+        current_list = [0, 0, 0, 0]
+        motors[i].throttle = -1.0
+        time.sleep(0.375)
+        while (current_list[i] < 0.325):
+            current_list = Read_Current()
+            # (Current_List)
+        motors[i].throttle = 0.0
+        time.sleep(0.5)
+        motors[i].throttle = 1.0
+        time.sleep(1.0)
+        motors[i].throttle = 0.0
+        encoders[i].position = 0
 
 def Motor_Pos_Movement(Motor, CList, BoolMain, BoolOther, BoolMove, LastJoyVal, Current_Threshold):
     current_list = Read_Current()
-    #print(current_list)
+    # print(current_list)
     if (LastJoyVal > Joy_High and current_list[CList] < Current_Threshold and BoolMain is False):
-        #print("PosMove")
+        # print("PosMove")
         Motor.throttle = +Motor_Speed
         BoolOther = False
         BoolMove = True
     elif (current_list[CList] > Current_Threshold and BoolOther is False):
-        #print("PosFlag")
+        # print("PosFlag")
         Motor.throttle = 0.0
-        #Motor_Retract(Motor, -Motor_Retract_Speed)
+        # Motor_Retract(Motor, -Motor_Retract_Speed)
         BoolMain = True
         BoolMove = False
     elif (LastJoyVal > Joy_Low):
-        #print("PosStop")
+        # print("PosStop")
         Motor.throttle = 0.0
         BoolMove = False
     time.sleep(0.05)
@@ -174,20 +189,20 @@ def Motor_Pos_Movement(Motor, CList, BoolMain, BoolOther, BoolMove, LastJoyVal, 
 
 def Motor_Neg_Movement(Motor, CList, BoolMain, BoolOther, BoolMove, LastJoyVal, Current_Threshold):
     current_list = Read_Current()
-    #print(current_list)
+    # print(current_list)
     if (LastJoyVal < Joy_Low and current_list[CList] < Current_Threshold and BoolMain is False):
-        #print("NegMove")
+        # print("NegMove")
         Motor.throttle = -Motor_Speed
         BoolOther = False
         BoolMove = True
     elif (current_list[CList] > Current_Threshold and BoolOther is False):
-        #print("NegFlag")
+        # print("NegFlag")
         Motor.throttle = 0.0
-        #Motor_Retract(Motor, +Motor_Retract_Speed)
+        # Motor_Retract(Motor, +Motor_Retract_Speed)
         BoolMain = True
         BoolMove = False
     elif (LastJoyVal < Joy_High):
-        #print("NegStop")
+        # print("NegStop")
         Motor.throttle = 0.0
         BoolMove = False
     time.sleep(0.05)
@@ -203,10 +218,10 @@ while True:
     if (abs(x_value - last_x) > 2) or (abs(y_value - last_y) > 2):
         last_x = x_value
         last_y = y_value
-        #print("X = ", last_x, "Y = ", last_y)
+        # print("X = ", last_x, "Y = ", last_y)
 
-    #current_list = Read_Current()
-    #print(current_list)
+    # current_list = Read_Current()
+    # print(current_list)
 
     buttons = seesaw.digital_read_bulk(button_mask)
 
@@ -224,6 +239,8 @@ while True:
         YNegMoveFlag = False
         XPosMoveFlag = False
         XNegMoveFlag = False
+
+        Motor_Home()
 
     if not buttons & (1 << BUTTON_Y):
         Motor_Speed = 0.275
@@ -271,96 +288,37 @@ while True:
 
     if (ZSwitch is False):
 
-        if(YPosFlag is False and YNegMoveFlag is False):
-            #print("PositiveYStart")
+        if (YPosFlag is False and YNegMoveFlag is False):
+            # print("PositiveYStart")
             YPosFlag, YNegFlag, YPosMoveFlag = Motor_Pos_Movement(mot_c, 2, YPosFlag, YNegFlag, YPosMoveFlag, last_x, CURRENT_THRESHOLD_Y)
-            #print("YPOS = ", YPosFlag, "YNEG = ", YNegFlag)
+            # print("YPOS = ", YPosFlag, "YNEG = ", YNegFlag)
 
-        if(YNegFlag is False and YPosMoveFlag is False):
-            #print("NegativeYStart")
+        if (YNegFlag is False and YPosMoveFlag is False):
+            # print("NegativeYStart")
             YNegFlag, YPosFlag, YNegMoveFlag = Motor_Neg_Movement(mot_c, 2, YNegFlag, YPosFlag, YNegMoveFlag, last_x, CURRENT_THRESHOLD_Y)
-            #print("YPOS = ", YPosFlag, "YNEG = ", YNegFlag)
+            # print("YPOS = ", YPosFlag, "YNEG = ", YNegFlag)
 
-        if(XPosFlag is False and XNegMoveFlag is False):
-            #print("PositiveXStart")
+        if (XPosFlag is False and XNegMoveFlag is False):
+            # print("PositiveXStart")
             XPosFlag, XNegFlag, XPosMoveFlag = Motor_Pos_Movement(mot_d, 3, XPosFlag, XNegFlag, XPosMoveFlag, last_y, CURRENT_THRESHOLD_X)
-            #print("XPOS = ", XPosFlag, "XNEG = ", XNegFlag)
+            # print("XPOS = ", XPosFlag, "XNEG = ", XNegFlag)
 
-        if(XNegFlag is False and XPosMoveFlag is False):
-            #print("NegativeXStart")
+        if (XNegFlag is False and XPosMoveFlag is False):
+            # print("NegativeXStart")
             XNegFlag, XPosFlag, XNegMoveFlag = Motor_Neg_Movement(mot_d, 3, XNegFlag, XPosFlag, XNegMoveFlag, last_y, CURRENT_THRESHOLD_X)
-            #print("XPOS = ", XPosFlag, "XNEG = ", XNegFlag)
+            # print("XPOS = ", XPosFlag, "XNEG = ", XNegFlag)
 
     if (ZSwitch is True):
-        if(ZPosFlag is False and ZNegMoveFlag is False):
-            #print("PositiveStart")
+        if (ZPosFlag is False and ZNegMoveFlag is False):
+            # print("PositiveStart")
             ZPosFlag, ZNegFlag, ZPosMoveFlag = Motor_Pos_Movement(mot_b, 1, ZPosFlag, ZNegFlag, ZPosMoveFlag, last_y, CURRENT_THRESHOLD_Z)
-            #print("ZPOS = ", ZPosFlag, "ZNEG = ", ZNegFlag)
+            # print("ZPOS = ", ZPosFlag, "ZNEG = ", ZNegFlag)
 
-        if(ZNegFlag is False and ZPosMoveFlag is False):
-            #print("NegativeStart")
+        if (ZNegFlag is False and ZPosMoveFlag is False):
+            # print("NegativeStart")
             ZNegFlag, ZPosFlag, ZNegMoveFlag = Motor_Neg_Movement(mot_b, 1, ZNegFlag, ZPosFlag, ZNegMoveFlag, last_y, CURRENT_THRESHOLD_Z)
-            #print("ZPOS = ", ZPosFlag, "ZNEG = ", ZNegFlag)
+            # print("ZPOS = ", ZPosFlag, "ZNEG = ", ZNegFlag)
 
     print(enc_d.position)
 
     time.sleep(0.05)
-
-    '''
-    # Read the current sense and print the value
-    current_list = []
-    for i in range(board.NUM_MOTORS):
-        select(i + board.CURRENT_SENSE_A_ADDR)
-        current = (get_voltage(analog_in) + CURRENT_OFFSET) * CURRENT_GAIN
-        current_list.append(current)
-        print("C", i + 1, " = ", round(current, 4), sep="", end=", ")
-    print()
-    '''
-
-    '''
-    if (last_y > Joy_High and current_list[0] < CURRENT_THRESHOLD):
-            mot_a.throttle = +Motor_Speed
-        elif (last_y > Joy_Low):
-            mot_a.throttle = 0.0
-            if (current_list[0] > CURRENT_THRESHOLD):
-                print('motor current limit reached')
-
-        if (last_y < Joy_Low and current_list[0] < CURRENT_THRESHOLD):
-            mot_a.throttle = -Motor_Speed
-        elif (last_y < Joy_High):
-            mot_a.throttle = 0.0
-            if (current_list[0] > CURRENT_THRESHOLD):
-                print('motor current limit reached')
-    '''
-
-    '''
-        if (last_x > Joy_High and current_list[1] < CURRENT_THRESHOLD and YPosFlag is False):
-            mot_b.throttle = +Motor_Speed
-            YNegFlag = False
-        elif (last_x > Joy_Low):
-            mot_b.throttle = 0.0
-        if (current_list[1] > CURRENT_THRESHOLD):
-            Motor_Retract(mot_b, -Motor_Retract_Speed, Motor_Retract_Timing, YPosFlag)
-
-        if (last_x < Joy_Low and current_list[1] < CURRENT_THRESHOLD and YNegFlag is False):
-            mot_b.throttle = -Motor_Speed
-            YPosFlag = False
-        elif (last_x < Joy_High):
-            mot_b.throttle = 0.0
-        if (current_list[1] > CURRENT_THRESHOLD):
-            Motor_Retract(mot_b, +Motor_Retract_Speed, Motor_Retract_Timing, YNegFlag)
-
-        if (last_y > Joy_High and current_list[2] < CURRENT_THRESHOLD):
-            mot_c.throttle = +Motor_Speed
-        elif (last_y > Joy_Low):
-            mot_c.throttle = 0.0
-            if (current_list[2] > CURRENT_THRESHOLD):
-                print('motor current limit reached')
-
-        if (last_y < Joy_Low and current_list[2] < CURRENT_THRESHOLD):
-            mot_c.throttle = -Motor_Speed
-        elif (last_y < Joy_High):
-            mot_c.throttle = 0.0
-            if (current_list[2] > CURRENT_THRESHOLD):
-                print('motor current limit reached')
-    '''
