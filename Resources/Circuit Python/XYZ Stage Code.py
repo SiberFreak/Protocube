@@ -202,6 +202,8 @@ def Motor_Neg_Movement(Motor, Encoder, CList, Speed, BoolMove, LastJoyVal, Curre
     time.sleep(0.01)
     return BoolMove
 
+Motor_Home()
+
 while True:
 
     x_value = 1023 - seesaw.analog_read(Joy_X)
