@@ -106,6 +106,7 @@ Motor_Speed = 0.275
 Motor_Retract_Speed = 1.0
 Motor_Retract_Timing = 3.75
 
+Motor_Home_Check = False
 LightSwitch = False
 ZSwitch = False
 
@@ -199,9 +200,11 @@ def Motor_Neg_Movement(Motor, Encoder, CList, Speed, BoolMove, LastJoyVal, Curre
     time.sleep(0.01)
     return BoolMove
 
-Motor_Home()
-
 while True:
+
+    if not Motor_Home_Check:
+        Motor_Home()
+        Motor_Home_Check = True
 
     x_value = 1023 - seesaw.analog_read(Joy_X)
     y_value = 1023 - seesaw.analog_read(Joy_Y)
