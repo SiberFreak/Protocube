@@ -1,3 +1,3 @@
 # Baseplate
-![Render (Baseplate)](https://github.com/Siber18/Protocube/assets/31034109/45b87842-1dd5-474f-a9b7-cfcc78fd4915)
+![Render_Baseplate](Render_Baseplate.png)
 A foundation for the cubes to sit on.
