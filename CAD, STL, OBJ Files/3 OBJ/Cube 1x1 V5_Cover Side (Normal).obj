@@ -2,7 +2,7 @@
 
 mtllib Cube 1x1 V5_Cover Side (Normal).mtl
 
-g Solid1:35
+g Solid1:37
 
 v -20.869367 7.850000 12.550009
 v -20.708462 7.850000 12.557511
@@ -4610,4 +4610,4 @@ f 497/1315/1307 494/1313/1305 660/1316/1308
 # 1308 normals
 # 1316 facets
 
-# 36 groups
+# 38 groups

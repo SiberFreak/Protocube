@@ -2,7 +2,7 @@
 
 mtllib Cube 1x1 V5_Cover Side (Slotted).mtl
 
-g Solid1:36
+g Solid1:38
 
 v -20.869367 7.850000 12.550009
 v -20.708462 7.850000 12.557511
@@ -4686,4 +4686,4 @@ f 501/1339/1331 498/1337/1329 668/1340/1332
 # 1332 normals
 # 1336 facets
 
-# 37 groups
+# 39 groups
