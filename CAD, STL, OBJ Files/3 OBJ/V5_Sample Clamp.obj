@@ -2,7 +2,7 @@
 
 mtllib V5_Sample Clamp.mtl
 
-g Solid1:35
+g Solid1:36
 
 v 10.250000 15.200000 -20.050000
 v -10.250000 15.200000 -20.050000
@@ -154,4 +154,4 @@ f 8/48/48 2/41/41 1/46/46
 # 48 normals
 # 32 facets
 
-# 36 groups
+# 37 groups
