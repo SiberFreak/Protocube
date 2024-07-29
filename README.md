@@ -1,4 +1,4 @@
 # Protocube
-![Alt text](Resources/Renders/Render_Flourescent_Upper.png)
-![Alt text](Resources/Renders/Render_Transmitted_Upper.png)
+![Animation_Flourescent](Resources/Renders/Animation_Flourescent_0001-0250.mkv)
+![Animation_Transmitted](Resources/Renders/Animation_Transmitted_0001-0250.mkv)
 A microscope built using 3D printed Cubes!
