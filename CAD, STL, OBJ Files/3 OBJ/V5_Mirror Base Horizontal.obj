@@ -2,7 +2,7 @@
 
 mtllib V5_Mirror Base Horizontal.mtl
 
-g Solid1:28
+g Solid1:29
 
 v 16.925000 47.450000 2.075758
 v 16.925000 47.450000 9.146825
@@ -9799,4 +9799,4 @@ f 1/2507/2430 5/2506/2429 2/2508/2431
 # 2431 normals
 # 3236 facets
 
-# 29 groups
+# 30 groups
