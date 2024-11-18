@@ -4,11 +4,9 @@
 A microscope built using 3D printed Cubes!
 
 
-https://github.com/user-attachments/assets/de6cb7d9-4b73-4b3c-be0d-f30042c6e04b
+https://github.com/user-attachments/assets/49f3d98f-34b9-44ec-8753-2452c5d8e914
 
 
 
-
-
-https://github.com/user-attachments/assets/a2c686d9-c2ee-427f-8bc0-5db18693de29
+https://github.com/user-attachments/assets/b85a2b6f-8580-445c-ac9c-59f73a623541
 
