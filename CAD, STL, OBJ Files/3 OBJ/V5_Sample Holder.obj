@@ -2,7 +2,7 @@
 
 mtllib V5_Sample Holder.mtl
 
-g Solid1:36
+g Solid1:38
 
 v 10.000000 15.200000 -16.800000
 v -10.000000 15.200000 -16.800000
@@ -3402,4 +3402,4 @@ f 1/997/995 5/996/994 2/998/996
 # 996 normals
 # 932 facets
 
-# 37 groups
+# 39 groups

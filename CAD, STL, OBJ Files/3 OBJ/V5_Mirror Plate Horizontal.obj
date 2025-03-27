@@ -2,7 +2,7 @@
 
 mtllib V5_Mirror Plate Horizontal.mtl
 
-g Solid1:30
+g Solid1:32
 
 v 17.223602 12.200000 17.223602
 v 17.220239 12.091055 17.220239
@@ -4116,4 +4116,4 @@ f 116/976/954 482/1190/1168 481/981/959
 # 1168 normals
 # 1164 facets
 
-# 31 groups
+# 33 groups

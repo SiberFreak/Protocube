@@ -2,7 +2,7 @@
 
 mtllib V5_Tunnel Vertical.mtl
 
-g Solid1:35
+g Solid1:37
 
 v -22.518934 7.700000 -14.825000
 v -21.575000 7.700000 -14.825000
@@ -586,4 +586,4 @@ f 53/192/192 39/161/161 55/163/163
 # 192 normals
 # 128 facets
 
-# 36 groups
+# 38 groups

@@ -2,7 +2,7 @@
 
 mtllib V5_Inner Cover Side Open.mtl
 
-g Solid1:58
+g Solid1:60
 
 v -20.869367 7.850000 12.550009
 v -20.708462 7.850000 12.557511
@@ -4686,4 +4686,4 @@ f 501/1339/1331 498/1337/1329 668/1340/1332
 # 1332 normals
 # 1336 facets
 
-# 59 groups
+# 61 groups

@@ -2,7 +2,7 @@
 
 mtllib V5_Interlinking Baseplate Pathed Angle V2.mtl
 
-g Solid1:43
+g Solid1:45
 
 v -5.651626 0.000000 -24.575000
 v -5.648284 0.000000 -24.595824
@@ -13066,4 +13066,4 @@ f 1259/3093/3025 1257/3220/3152 1633/3425/3357
 # 3616 normals
 # 3848 facets
 
-# 44 groups
+# 46 groups

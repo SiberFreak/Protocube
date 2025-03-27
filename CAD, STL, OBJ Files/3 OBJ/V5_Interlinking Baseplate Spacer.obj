@@ -2,7 +2,7 @@
 
 mtllib V5_Interlinking Baseplate Spacer.mtl
 
-g Solid1:39
+g Solid1:41
 
 v 17.050000 0.000000 -17.050000
 v 17.050000 0.000000 17.050000
@@ -9274,4 +9274,4 @@ f 857/2130/2098 133/2664/2632 132/2370/2338
 # 2632 normals
 # 2656 facets
 
-# 40 groups
+# 42 groups

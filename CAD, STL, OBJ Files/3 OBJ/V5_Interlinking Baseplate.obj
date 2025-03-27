@@ -2,7 +2,7 @@
 
 mtllib V5_Interlinking Baseplate.mtl
 
-g Solid1:38
+g Solid1:40
 
 v -5.651626 0.000000 -24.575000
 v -5.648284 0.000000 -24.595824
@@ -16858,4 +16858,4 @@ f 1722/4015/3911 1891/4704/4600 1890/4016/3912
 # 4600 normals
 # 5040 facets
 
-# 39 groups
+# 41 groups

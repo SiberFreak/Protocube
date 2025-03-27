@@ -2,7 +2,7 @@
 
 mtllib V5_Interlinking Baseplate Pathed Male.mtl
 
-g Solid1:41
+g Solid1:43
 
 v 25.125000 2.000000 5.546320
 v 24.875000 2.000000 5.546320
@@ -10650,4 +10650,4 @@ f 219/2503/2455 214/2370/2322 1026/2718/2670
 # 3000 normals
 # 3072 facets
 
-# 42 groups
+# 44 groups
